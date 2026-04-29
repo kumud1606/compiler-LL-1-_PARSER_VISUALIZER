@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parser Visualizer</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="landing-page">
+  <main class="choice-shell">
+    <div class="choice-intro">
+      <p class="landing-kicker">Compiler Visualizer</p>
+      <h1 class="landing-title">Choose Your Parser</h1>
+      <p class="landing-copy">Open the existing LL(1) visualizer or explore a new CLR parser with canonical LR(1) states, ACTION/GOTO tables, and parse steps.</p>
+    </div>
+
+    <div class="choice-grid">
+      <a class="choice-card" href="/parser.html?mode=ll1">
+        <span class="choice-tag">Predictive</span>
+        <h2>LL(1) Parser</h2>
+        <p>Use the current grammar-driven LL(1) visualizer with grammar, FIRST, FOLLOW, table, and trace.</p>
+      </a>
+
+      <a class="choice-card" href="/parser.html?mode=clr">
+        <span class="choice-tag">Bottom-Up</span>
+        <h2>CLR Parser</h2>
+        <p>Inspect canonical LR(1) item sets, ACTION/GOTO tables, and the CLR shift-reduce parsing trace.</p>
+      </a>
+    </div>
+  </main>
+</body>
+</html>

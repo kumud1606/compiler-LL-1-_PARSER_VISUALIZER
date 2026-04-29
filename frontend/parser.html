@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parser Visualizer</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="workspace-page">
+  <header class="topbar">
+    <div>
+      <h1 id="modeTitle">Parser Visualizer</h1>
+      <p id="modeDescription">Paste a C-like snippet and inspect the parser steps for the selected mode.</p>
+    </div>
+    <a class="ghost-link" href="/">Back</a>
+  </header>
+
+  <section class="panel">
+    <h2>C Code Input</h2>
+    <textarea id="codeInput" rows="10" spellcheck="false">int a = 1;
+a = (a + 2) * 3;</textarea>
+    <div class="row">
+      <button id="runBtn">Run Analysis</button>
+      <button id="sampleBtn" class="secondary-btn">Load Another Sample</button>
+    </div>
+    <p id="supportNote" class="note">Supported: declarations, assignments, blocks, if/else, while, for, optional #include, and main().</p>
+  </section>
+
+  <section id="statusSection" class="status hidden"></section>
+
+  <section id="grammarSection" class="panel hidden">
+    <h2>Grammar Used For This Snippet</h2>
+    <div id="grammarBox" class="value-list"></div>
+  </section>
+
+  <section id="firstFollowSection" class="panel hidden">
+    <h2>FIRST and FOLLOW Sets</h2>
+    <div class="two-col">
+      <div>
+        <h3>FIRST</h3>
+        <div id="firstBox"></div>
+      </div>
+      <div>
+        <h3>FOLLOW</h3>
+        <div id="followBox"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ll1TableSection" class="panel hidden">
+    <h2>LL(1) Parsing Table</h2>
+    <div class="table-wrap">
+      <table id="ll1Table"></table>
+    </div>
+  </section>
+
+  <section id="clrItemsSection" class="panel hidden">
+    <h2>Canonical LR(1) Item Sets</h2>
+    <div id="clrItemsBox" class="state-grid"></div>
+  </section>
+
+  <section id="clrTableSection" class="panel hidden">
+    <h2>CLR Tables</h2>
+    <div class="two-col">
+      <div>
+        <h3>ACTION</h3>
+        <div class="table-wrap">
+          <table id="actionTable"></table>
+        </div>
+      </div>
+      <div>
+        <h3>GOTO</h3>
+        <div class="table-wrap">
+          <table id="gotoTable"></table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="traceSection" class="panel hidden">
+    <h2 id="traceTitle">Stack / Input / Action Table</h2>
+    <div class="table-wrap">
+      <table id="traceTable">
+        <thead>
+          <tr>
+            <th>Stack</th>
+            <th>Input</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <script src="/app.js"></script>
+</body>
+</html>
