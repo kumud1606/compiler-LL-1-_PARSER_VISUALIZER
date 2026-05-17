@@ -1,6 +1,6 @@
 # C Snippet Syntax Checker
 
-This project is a from-scratch LL(1)-based syntax checker for small C snippets.
+This project is a LL(1)-based syntax checker for small C snippets.
 
 ## What It Does
 
